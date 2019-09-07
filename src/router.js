@@ -9,6 +9,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'root',
+      redirect: '/restaurants'
+    },
+    {
       path: '/signin',
       name: 'sign-in',
       component: SignIn
@@ -17,6 +22,26 @@ export default new Router({
       path: '/signup',
       name: 'sign-up',
       component: SignUp
+    },
+    {
+      path: '/restaurants',
+      name: 'restaurants',
+      component: Restaurants
+    },
+    {
+      path: '/restaurants/feeds',
+      name: 'restaurants-feeds',
+      component: () => import('./views/RestaurantsFeeds.vue')
+    },
+    {
+      path: '/restaurants/top',
+      name: 'restaurants-tops',
+      component: () => import('./views/RestaurantsTop.vue')
+    },
+    {
+      path: '/users/top',
+      name: 'users-top',
+      component: () => import('./views/UsersTop.vue')
     },
     {
       path: '*',
