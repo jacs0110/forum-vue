@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <form class="w-100" @submit.prevent.stop="handleSubmit">
+    <form class="w-100" @submit.stop.prevent="handleSubmit">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
       </div>
@@ -55,6 +55,7 @@ export default {
     };
   },
   methods: {
+    // eslint-disable-next-line
     handleSubmit(e) {
       const data = JSON.stringify({
         email: this.email,
@@ -62,6 +63,7 @@ export default {
       });
 
       // Todo: 後端驗證
+      // eslint-disable-next-line
       console.log("data", data);
     }
   }

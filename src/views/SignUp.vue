@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <form class="w-100" @submit.prevent.top="handleSubmit">
+    <form class="w-100" @submit.stop.prevent="handleSubmit">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       </div>
@@ -83,7 +83,7 @@ export default {
     };
   },
   methods: {
-    handleSubmit(e) {
+    handleSubmit() {
       const data = JSON.stringify({
         name: this.name,
         email: this.email,
@@ -92,7 +92,8 @@ export default {
       });
 
       // Todo: 後端驗證
-      console.log("data", data);
+      // eslint-disable-next-line
+      console.log(data);
     }
   }
 };
