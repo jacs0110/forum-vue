@@ -6,13 +6,14 @@
     <hr />
     <div class="row">
       <div class="col-md-6">
+        <!-- 最新餐廳 NewestRestaurants -->
         <h3>New restaurants</h3>
         <NewestRestaurants :restaurants="restaurants" />
-        <!-- 最新餐廳 NewestRestaurants -->
       </div>
       <div class="col-md-6">
         <!-- 最新評論 NewestComments-->
         <h3>New comments</h3>
+        <NewestComments :comments="comments" />
       </div>
     </div>
   </div>
@@ -21,6 +22,7 @@
 <script>
 import NavTabs from "./../components/NavTabs";
 import NewestRestaurants from "./../components/NewestRestaurants";
+import NewestComments from "./../components/NewestComments";
 
 // eslint-disable-next-line
 const dummyData = {
@@ -575,7 +577,8 @@ const dummyData = {
 export default {
   components: {
     NavTabs,
-    NewestRestaurants
+    NewestRestaurants,
+    NewestComments
   },
   data() {
     return {
